@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }) {
     <View>
       <TouchableOpacity onPress={() => handleClick()}>
         <Text style={styles.button}>
-          Bienvenue (cliquer sur moi)
+          Bienvenue (cliquer ici) pour ajouter "..." au reducer, vous serez aussi redirigez vers la screen LoginScreen
         </Text>
       </TouchableOpacity>
     </View>

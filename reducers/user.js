@@ -12,7 +12,7 @@ export const userSlice = createSlice({
    firstfonction: (state, action) => {
      state.value.token = action.payload.token;
    },
-   secondfonction: (state, action) => {
+   secondfonction: (state) => {
     state.value = { token: null, name : null};
   },
  },
