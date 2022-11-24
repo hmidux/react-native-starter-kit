@@ -1,18 +1,27 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-
-import users from './reducers/users';
-
-const store = configureStore({
-  reducer: { users },
-});
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { persistStore, persistReducer } from "redux-persist";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { PersistGate } from "redux-persist/integration/react";
+import { Provider } from "react-redux";;
+import user from "./reducers/user";
 
 import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
+
+const reducers = combineReducers({ user });
+
+const persistConfig = { key: "applicationName", storage: AsyncStorage };
+
+const store = configureStore({
+  reducer: persistReducer(persistConfig, reducers),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }),
+});
+
+const persistor = persistStore(store);
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

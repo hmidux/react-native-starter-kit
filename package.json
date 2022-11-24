@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "react-native-tabnav-stacknav-redux-persist",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-navigation/bottom-tabs": "6",
     "@react-navigation/native": "6",
     "@react-navigation/native-stack": "6",
@@ -19,10 +20,15 @@
     "react-native": "0.70.5",
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "~3.18.0",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.5",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": false,
+  "description": "Un package qui contient React Native, la stack navigation, la tav navigation, redux et redux persist",
+  "repository": "https://github.com/hmidux/react-native-starter-kit.git",
+  "author": "Hameir H'mida <hameir.hmida@gmail.com>",
+  "license": "MIT"
 }
